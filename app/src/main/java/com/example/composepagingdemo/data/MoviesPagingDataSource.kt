@@ -29,7 +29,7 @@ class MoviesPagingDataSource(
             if (response.content.isEmpty()) {
                 LoadResult.Page(
                     data = response.content,
-                    prevKey = null,
+                    prevKey = response.number - 1,
                     nextKey = null
                 )
             } else {
@@ -42,7 +42,7 @@ class MoviesPagingDataSource(
                 channel.receive()
                 LoadResult.Page(
                     data = response.content,
-                    prevKey = null,
+                    prevKey = response.number - 1,
                     nextKey = response.number + 1
                 )
             }
