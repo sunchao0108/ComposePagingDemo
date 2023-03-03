@@ -43,7 +43,7 @@ class MoviesPagingDataSource(
                 LoadResult.Page(
                     data = response.content,
                     prevKey = null,
-                    nextKey = if (response.content.isNotEmpty()) response.number + 1 else null
+                    nextKey = response.number + 1
                 )
             }
 
